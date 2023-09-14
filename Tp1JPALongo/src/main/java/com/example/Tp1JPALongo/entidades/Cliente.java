@@ -27,7 +27,7 @@ public class Cliente implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true,fetch = FetchType.EAGER)
     private List<Domicilio> domicilios = new ArrayList<>();
 
-    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true,fetch = FetchType.EAGER)
+    @OneToMany(orphanRemoval = true,fetch = FetchType.EAGER,cascade = CascadeType.REMOVE)
     private List<Pedido> pedidos = new ArrayList<>();
 
     public void addDomicilio(Domicilio domicilio){

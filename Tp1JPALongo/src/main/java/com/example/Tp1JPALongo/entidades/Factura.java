@@ -25,10 +25,4 @@ public class Factura implements Serializable {
     private String formaPago;
     private double total;
 
-
-
-
-
-
-
 }

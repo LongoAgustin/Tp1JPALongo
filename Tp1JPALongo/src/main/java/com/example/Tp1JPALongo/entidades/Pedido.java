@@ -25,14 +25,14 @@ public class Pedido implements Serializable {
     private double total;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private List<DetallePedido> detallePedidos = new ArrayList();
+    private List<DetallePedido> detPedidos = new ArrayList();
 
     @OneToOne(cascade = CascadeType.REMOVE, orphanRemoval = true, fetch = FetchType.EAGER)
     @JoinColumn(nullable = true)
     private Factura factura;
 
-    public void addDetallePedido(DetallePedido detallePedido){
-        this.detallePedidos.add(detallePedido);
+    public void addDetallePedido(DetallePedido detPed){
+        this.detPedidos.add(detPed);
     }
 
 }

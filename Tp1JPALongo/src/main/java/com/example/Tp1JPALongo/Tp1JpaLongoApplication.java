@@ -41,10 +41,10 @@ public class Tp1JpaLongoApplication {
             cliente1.setNombre("Agustin");
             cliente1.setApellido("Longo");
             cliente1.setTelefono("2616180808");
+            cliente1.setEmail("aguslongo69@gmail.com");
 
             //Domicilio
             Domicilio dom1 = new Domicilio();
-
             dom1.setCalle("Urquiza");
             dom1.setLocalidad("Guaymallen");
             dom1.setNumero("2500");
@@ -53,6 +53,7 @@ public class Tp1JpaLongoApplication {
 
             //Pedido
             Pedido pedido1 = new Pedido();
+
 
             pedido1.setEstado("Iniciado");
             pedido1.setFecha(new Date());
@@ -65,7 +66,7 @@ public class Tp1JpaLongoApplication {
 
             Factura factura1 = new Factura();
 
-            factura1.setNumero(2);
+            factura1.setNumero(1);
             factura1.setFecha(new Date());
             factura1.setFormaPago("Efectivo");
             factura1.setTotal(785.21);
@@ -106,15 +107,12 @@ public class Tp1JpaLongoApplication {
             rubro.addProducto(prod1);
 
 
-            clienteRepository.save(cliente1);
-            pedidoRepository.save(pedido1);
-            facturaRepository.save(factura1);
+
             productoRepository.save(prod1);
             rubroRepository.save(rubro);
-
-
-
-
+            facturaRepository.save(factura1);
+            pedidoRepository.save(pedido1);
+            clienteRepository.save(cliente1);
 
             // Recuperar el objeto Persona desde la base de datos
             Cliente clienteRecuperado = clienteRepository.findById(cliente1.getId()).orElse(null);
